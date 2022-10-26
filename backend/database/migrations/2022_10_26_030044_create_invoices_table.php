@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Client;
 
-class CreateProductsTable extends Migration
+class CreateInvoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +14,14 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name', 100);
-            $table->string('description', 512);
-            $table->string('sku', 20);
-            $table->float('price')->default(0);
+            // $table->integer('number'); We Can add a serialized number
+            $table->integer('status')->default(0);
+            $table->float('total')->default(0);
+
+            $table->foreignIdFor(Client::class);
 
             $table->timestamps();
         });
@@ -32,6 +34,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('invoices');
     }
 }

@@ -13,6 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // If you want to use factory for seeder should uncomment next line
+        // \App\Models\Client::factory(10)->create();
+        // \App\Models\Product::factory(10)->create();
+
+        $this->call(ClientSeeder::class);
+        $this->call(ProductSeeder::class);
+        $this->call(InvoiceSeeder::class);
     }
 }

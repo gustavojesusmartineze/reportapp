@@ -3,8 +3,10 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Product;
+use App\Models\Invoice;
 
-class CreateProductsTable extends Migration
+class CreateInvoiceProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +15,13 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('invoice_products', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name', 100);
-            $table->string('description', 512);
-            $table->string('sku', 20);
-            $table->float('price')->default(0);
+            $table->foreignIdFor(Product::class);
+            $table->foreignIdFor(Invoice::class);
+
+            $table->integer('quantity')->default(0);
 
             $table->timestamps();
         });
@@ -32,6 +34,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('invoice_products');
     }
 }
