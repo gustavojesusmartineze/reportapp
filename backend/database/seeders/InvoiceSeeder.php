@@ -29,7 +29,7 @@ class InvoiceSeeder extends Seeder
         $product3 = Product::find(3);
         $product4 = Product::find(4);
         $product5 = Product::find(5);
-        $product5 = Product::find(6);
+        $product6 = Product::find(6);
 
         $totalInvoice1 = $product1->price + $product2->price;
         $invoice = Invoice::create([
