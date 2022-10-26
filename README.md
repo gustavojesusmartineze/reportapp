@@ -47,3 +47,21 @@ composer install
 php artisan migrate
 php artisan serve
 ```
+
+Loading [127.0.0.1:8000](127.0.0.1:8000) now should show the default Laravel page, and [127.0.0.1:8000/api/](127.0.0.1:8000/api/) will expose our API.
+
+### Set up mysql database with docker
+Run with latest mysql image
+```
+docker run --detach --name=mysqllocalnew --env="MYSQL_ROOT_PASSWORD=mysqllocalnew" --publish 6603:3306 --volume=/root/docker/mysqllocalnew/conf.d:/etc/mysql/conf.d mysql
+```
+
+Access container from console
+```
+docker exec -it mysqllocalnew bash
+```
+
+Or you can run it directly
+```
+mysql -uroot --password=mysqllocalnew --host=127.0.0.1 -P6603 
+```
