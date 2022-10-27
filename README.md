@@ -21,7 +21,7 @@ Create the database and user for the project:
 ```
 mysql -uroot -p
 CREATE DATABASE reportapp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL on reportapp.* to root@127.0.0.1 identified by 'reportapp';
+CREATE DATABASE testreportapp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 quit
 ```
 
