@@ -45,7 +45,14 @@ Install the project dependencies, generate a project key, run the migrations and
 ```
 composer install
 php artisan migrate
+php artisan migrate:refresh --seed
 php artisan serve
+```
+
+
+This command is useful if you want the db to be seeded with sample data
+```
+php artisan migrate:refresh --seed
 ```
 
 Loading [127.0.0.1:8000](127.0.0.1:8000) now should show the default Laravel page, and [127.0.0.1:8000/api/](127.0.0.1:8000/api/) will expose our API.
