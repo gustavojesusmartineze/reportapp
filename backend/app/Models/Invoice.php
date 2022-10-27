@@ -25,6 +25,6 @@ class Invoice extends Model
     // Relation with Product.
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'invoice_products');
+        return $this->belongsToMany(Product::class, 'invoice_products')->withPivot('quantity');
     }
 }

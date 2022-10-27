@@ -25,7 +25,7 @@ class InvoiceResource extends JsonResource
             'id' => $this->id,
             'status' => [
                 'code' => $this->status,
-                'value' => InvoiceStatus::listStatus()[$this->status]
+                'value' => InvoiceStatus::listStatusValue()[$this->status]
             ],
             'total' => $this->total,
             'client' => $client,
