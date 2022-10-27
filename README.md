@@ -55,6 +55,11 @@ This command is useful if you want the db to be seeded with sample data
 php artisan migrate:refresh --seed
 ```
 
+This command is useful to test backend
+```
+php artisan test
+```
+
 Loading [127.0.0.1:8000](127.0.0.1:8000) now should show the default Laravel page, and [127.0.0.1:8000/api/](127.0.0.1:8000/api/) will expose our API.
 
 ### Set up mysql database with docker
