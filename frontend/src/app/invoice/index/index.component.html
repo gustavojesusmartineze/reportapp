@@ -1,0 +1,27 @@
+<section>
+
+  <div class="d-flex justify-content-between">
+    <h4>List of invoices</h4>
+  </div>
+
+  <br>
+
+  <table class="table ">
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Client</th>
+      <th>Total</th>
+      <th width="220px">Action</th>
+    </tr>
+    <tr *ngFor="let invoice of invoices">
+      <td>{{ invoice.id }}</td>
+      <td>{{ invoice.status.value }}</td>
+      <td>{{ invoice.client.name }}</td>
+      <td>{{ invoice.total }}</td>
+      <td>
+        <a href="#" [routerLink]="['/invoice/', invoice.id , 'show' ]" class="btn btn-primary">Show</a>
+      </td>
+    </tr>
+  </table>
+</section>

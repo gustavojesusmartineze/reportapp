@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="d-flex justify-content-between">
+    <h4>Invoice #{{ invoice.id }}</h4>
+    <a href="#" routerLink="/invoice/index" class="btn btn-primaryt">Back</a>
+  </div>
+
+  <hr>
+
+  <table class="table ">
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sub-Total</th>
+    </tr>
+    <tr *ngFor="let product of invoice.products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.pivot.quantity }}</td>
+      <td>{{ product.pivot.quantity * product.price}}</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <div class="d-flex justify-content-end">
+    <h3>Total: {{ invoice.total }}</h3>
+  </div>
+</div>
