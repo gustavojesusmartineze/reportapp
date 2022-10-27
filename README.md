@@ -65,3 +65,16 @@ Or you can run it directly
 ```
 mysql -uroot --password=mysqllocalnew --host=127.0.0.1 -P6603 
 ```
+
+### Set up the Frontend
+
+```
+cd frontend
+npm install -g @angular/cli
+npm install
+ng serve -o --port=3500
+```
+
+NOTE: if using a virtual machine and NAT, you might need to run the server as `ng serve --open --host 0.0.0.0` instead.
+
+Loading [127.0.0.1:3500](127.0.0.1:3500) now should show you the application.
